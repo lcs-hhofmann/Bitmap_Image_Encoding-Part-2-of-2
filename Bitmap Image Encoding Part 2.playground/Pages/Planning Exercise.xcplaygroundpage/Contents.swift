@@ -22,11 +22,11 @@
  */
 
 // Here's my list of points describing how I decoded the image...
-// 1.
-// 2.
-// 3.
-// 4.
-// 5.
+// 1.Whenever the first number was more than zero I counted that many squares and left them blank
+// 2.If the first number was zero I imediately started colouring the next number's amount of squares
+// 3.Every second, fourth, sixth, etc. number I counted that many and coloured them in
+// 4. Every first, third, fifth, etc. number I counted and left blank
+// 5. I looked for patterns in the code to make it easier to do fast
 // etc. (add more points as needed)
 
 /*:
