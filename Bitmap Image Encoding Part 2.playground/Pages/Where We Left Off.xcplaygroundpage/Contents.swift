@@ -54,8 +54,8 @@ for character in encodedBitmap {
  
  Write your ideas in the code comment below.
  */
-// I notice that...
-// I know this because...
+// I notice that they do make the expected output based on the values in the string.
+// I know this because whenever there is a 1 in the string it shows as a white square in the image.
 /*:
  Now, **remember to commit and push your work**.
  */
