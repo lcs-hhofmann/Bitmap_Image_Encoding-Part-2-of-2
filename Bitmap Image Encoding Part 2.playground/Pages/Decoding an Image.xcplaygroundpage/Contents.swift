@@ -20,12 +20,21 @@ import PlaygroundSupport
 
 // Copy your encoded image string here...
 let encodedBitmap = """
-1,3,1
-4,1
-1,4
-0,1,3,1
-0,1,3,1
-1,4
+
+
+
+
+
+8,4
+7,1,4,1
+6,1,6,1
+5,1,2,1,2,1,2,1
+5,1,1,2,2,2,1,1
+5,1,8,1
+5,1,1,1,4,1,1,1
+6,1,1,4,1,1
+7,1,4,1
+8,4
 """
 
 // Make a canvas
@@ -58,22 +67,23 @@ for character in encodedBitmap {
         
         canvas.fillColor = Color.black
         currentColor = "black"
-
+        
     } else if character == "," {
         
         // We have a new number
         // Are we past the first pixel in a row?
         if x > 0 {
-
+            
             // Toggle the pixel colour
             if currentColor == "black" {
                 currentColor = "white"
                 canvas.fillColor = Color.white
-            } else {
+            }
+            else {
                 currentColor = "black"
                 canvas.fillColor = Color.black
             }
-
+            
         }
         
     } else if character == "\n" {
@@ -94,15 +104,15 @@ for character in encodedBitmap {
         
         // Draw the pixels
         for _ in 1...drawThisManyPixels {
-
+            
             // Draw the enlarged "pixel"
             canvas.drawRectangle(bottomLeftX: x, bottomLeftY: y, width: cellSize, height: cellSize)
             
             // Increase x so that the next pixel is drawn to the right of this one
             x += cellSize
-
+            
         }
-
+        
     }
     
 }

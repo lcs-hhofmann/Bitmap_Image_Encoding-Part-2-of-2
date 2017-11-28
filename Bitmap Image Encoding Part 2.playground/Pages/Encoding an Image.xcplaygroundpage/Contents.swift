@@ -17,12 +17,16 @@ import PlaygroundSupport
  */
 // Write the encoding for your image here
 let encodedBitmap = """
-1,3,1
-4,1
-1,4
-0,1,3,1
-0,1,3,1
-1,4
+8,4
+7,1,4,1
+6,1,6,1
+5,1,2,1,2,1,2,1
+5,1,1,2,2,2,1,1
+5,1,8,1
+5,1,1,1,4,1,1,1
+6,1,1,4,1,1
+7,1,4,1
+8,4
 """
 
 /*:
