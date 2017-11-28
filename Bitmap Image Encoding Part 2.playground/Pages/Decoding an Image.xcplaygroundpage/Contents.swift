@@ -20,20 +20,22 @@ import PlaygroundSupport
 
 // Copy your encoded image string here...
 let encodedBitmap = """
-
-
-
-
-7,5
-6,1,5,1
-5,1,7,1
-4,1,2,1,3,1,2,1
-4,1,2,2,2,2,1,1
-4,1,9,1
-4,1,2,1,3,1,2,1
-5,1,2,3,2,1
-6,1,5,1
-7,5
+w20
+w20
+w20
+w20
+w20
+w5b3w3b3w6
+w4b1r3b1w1b1p1r2b1w5
+w3b1r5b1p1w1p1r2b1w4
+w3b1r7p1w1p1r1b1w4
+w3b1d1r6p1w1p1d1b1w4
+w4b1d1r6p1d1b1w5
+w5b1d1r5d1b1w6
+w6b1d1r3d1b1w7
+w7b1d1r1d1b1w8
+w8b1d1b1w9
+w9b1w9w1
 """
 
 // Make a canvas
@@ -77,15 +79,31 @@ for character in encodedBitmap {
             if currentColor == "black" {
                 currentColor = "white"
                 canvas.fillColor = Color.white
-            }
-            else {
+            } else {
                 currentColor = "black"
                 canvas.fillColor = Color.black
             }
             
         }
         
-    } else if character == "\n" {
+    } else if character == "w" {
+        currentColor = "white"
+        canvas.fillColor = Color.white
+    } else if character == "p" {
+        currentColor = "pink"
+        canvas.fillColor = Color.init(hue: 355, saturation: 50, brightness: 100, alpha: 100)
+    } else if character == "r" {
+        currentColor = "red"
+        canvas.fillColor = Color.init(hue: 0, saturation: 80, brightness: 80, alpha: 100)
+    } else if character == "d" {
+        currentColor = "dark red"
+        canvas.fillColor = Color.init(hue: 0, saturation: 80, brightness: 60, alpha: 100)
+    } else if character == "b" {
+        currentColor = "black"
+        canvas.fillColor = Color.black
+    }
+    
+    else if character == "\n" {
         
         // We are on a new line, so reduce the vertical position
         // and reset the horizontal position
