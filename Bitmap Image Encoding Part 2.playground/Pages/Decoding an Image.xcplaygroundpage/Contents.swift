@@ -20,22 +20,26 @@ import PlaygroundSupport
 
 // Copy your encoded image string here...
 let encodedBitmap = """
-w20
-w20
-w20
-w20
-w20
-w5b3w3b3w6
-w4b1r3b1w1b1p1r2b1w5
-w3b1r5b1p1w1p1r2b1w4
-w3b1r7p1w1p1r1b1w4
-w3b1d1r6p1w1p1d1b1w4
-w4b1d1r6p1d1b1w5
-w5b1d1r5d1b1w6
-w6b1d1r3d1b1w7
-w7b1d1r1d1b1w8
-w8b1d1b1w9
-w9b1w9w1
+u9u9u2
+u9u9u2
+u9u9u2
+u9u9u2
+u9u9u2
+u5b3u3b3u6
+u4b1r3b1u1b1r3b1u5
+u3b1r5b1r2w1r2b1u4
+u3b1r9w1r1b1u4
+u3b1d1r8w1d1b1u4
+u4b1d1r7d1b1u5
+u5b1d1r5d1b1u6
+u6b1d1r3d1b1u7
+u7b1d1r1d1b1u8
+u8b1d1b1u9
+u9b1u9u1
+u9u9u2
+u9u9u2
+u9u9u2
+u9u9u2
 """
 
 // Make a canvas
@@ -89,9 +93,9 @@ for character in encodedBitmap {
     } else if character == "w" {
         currentColor = "white"
         canvas.fillColor = Color.white
-    } else if character == "p" {
-        currentColor = "pink"
-        canvas.fillColor = Color.init(hue: 355, saturation: 50, brightness: 100, alpha: 100)
+    } else if character == "u" {
+        currentColor = "blue"
+        canvas.fillColor = Color.init(hue: 180, saturation: 80, brightness: 80, alpha: 100)
     } else if character == "r" {
         currentColor = "red"
         canvas.fillColor = Color.init(hue: 0, saturation: 80, brightness: 80, alpha: 100)
