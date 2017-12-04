@@ -18,7 +18,30 @@ import PlaygroundSupport
  First, copy and paste your encoded image string to this page.
 */
 
-// Copy your encoded image string here...
+//plan what each line will be
+    //background
+    //background
+    //background
+    //background
+    //background
+    //top of black outline
+    //black and red only
+    //start of the gleam and start of the straight side
+    //second part of the gleam
+    //start of the shadow and end of the gleam and end of the staright bit
+    //heart starts concaving back
+    //concaving...
+    //concaving...
+    //concaving...
+    //concaving...
+    //concaving...
+    //final point of the heart
+    //background
+    //background
+    //background
+    //background
+
+//add the matching code to actually make the image
 let encodedBitmap = """
 u9u9u2
 u9u9u2
@@ -67,56 +90,28 @@ var drawThisManyPixels = 0
 // Iterate over each character in the encoded bitmap string
 for character in encodedBitmap {
     
-    // Set colour at start of a line
-    if character == "0" {
-        
-        canvas.fillColor = Color.black
-        currentColor = "black"
-        
-    } else if character == "," {
-        
-        // We have a new number
-        // Are we past the first pixel in a row?
-        if x > 0 {
-            
-            // Toggle the pixel colour
-            if currentColor == "black" {
-                currentColor = "white"
-                canvas.fillColor = Color.white
-            } else {
-                currentColor = "black"
-                canvas.fillColor = Color.black
-            }
-            
-        }
-        
-    } else if character == "w" {
+    //make the if satements that will add the colour bits
+    if character == "w" {
         currentColor = "white"
         canvas.fillColor = Color.white
     } else if character == "u" {
         currentColor = "blue"
-        canvas.fillColor = Color.init(hue: 180, saturation: 80, brightness: 80, alpha: 100)
+        canvas.fillColor = Color.init(hue: 180, saturation: 80, brightness: 90, alpha: 100)
     } else if character == "r" {
         currentColor = "red"
-        canvas.fillColor = Color.init(hue: 0, saturation: 80, brightness: 80, alpha: 100)
+        canvas.fillColor = Color.init(hue: 0, saturation: 80, brightness: 90, alpha: 100)
     } else if character == "d" {
         currentColor = "dark red"
-        canvas.fillColor = Color.init(hue: 0, saturation: 80, brightness: 60, alpha: 100)
+        canvas.fillColor = Color.init(hue: 0, saturation: 80, brightness: 70, alpha: 100)
     } else if character == "b" {
         currentColor = "black"
         canvas.fillColor = Color.black
-    }
-    
-    else if character == "\n" {
+    } else if character == "\n" {
         
         // We are on a new line, so reduce the vertical position
         // and reset the horizontal position
         y = y - cellSize
         x = 0
-        
-        // Default colour after new line is white
-        canvas.fillColor = Color.white
-        currentColor = "white"
         
     } else {
         
@@ -147,8 +142,8 @@ for character in encodedBitmap {
  Write your ideas in the code comment below.
  */
 
-// I notice that...
-// I know this because...
+// I notice that it matched what I coded.
+// I know this because I went through all of it and added what I needed to to get the results that I wanted.
 
 /*:
  ## Extension
