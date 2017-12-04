@@ -88,10 +88,34 @@ var y = canvas.height - cellSize - 2
 var drawThisManyPixels = 0
 
 // Iterate over each character in the encoded bitmap string
-for character in encodedBitmap {
-    
+    for character in encodedBitmap {
+        
+        // Set colour at start of a line
+        if character == "0" {
+            
+            canvas.fillColor = Color.black
+            currentColor = "black"
+            
+        } else if character == "," {
+            
+            // We have a new number
+            // Are we past the first pixel in a row?
+            if x > 0 {
+                
+                // Toggle the pixel colour
+                if currentColor == "black" {
+                    currentColor = "white"
+                    canvas.fillColor = Color.white
+                } else {
+                    currentColor = "black"
+                    canvas.fillColor = Color.black
+                }
+                
+            }
+            
+        }
     //make the if satements that will add the colour bits
-    if character == "w" {
+    else if character == "w" {
         currentColor = "white"
         canvas.fillColor = Color.white
     } else if character == "u" {
@@ -112,6 +136,10 @@ for character in encodedBitmap {
         // and reset the horizontal position
         y = y - cellSize
         x = 0
+            
+            // Default colour after new line is white
+            canvas.fillColor = Color.white
+            currentColor = "white"
         
     } else {
         
